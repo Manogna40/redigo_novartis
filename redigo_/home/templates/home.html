@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    {% load static %}
+      <title>REDIGO</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+      <!-- <link rel="stylesheet" href='./static/home.css'> -->
+      <link rel="stylesheet" href="{% static '/css/home.css' %}">
+
+
+   </head>
+   <body class="bg-light">
+    <nav class="navbar nav-scroller bg-body shadow-sm">
+      <!-- <img src="https://www.novartis.com/themes/custom/nvs_arctic/logo.svg" alt="novartis" class="logo"> -->
+      <img src="{% static '/img/novartis_logo.svg' %}" alt="novartis" class="logo">
+      <button class="btn" ><a href="/logout/"><img src="{% static '/img/logout.png' %}" class="logout_img"/></a></button>
+      <!-- <button class="btn" ><a href="/logout/"><img src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/25/000000/external-logout-screen-from-the-working-portfolio-of-a-user-classic-bold-tal-revivo.png" class="logout_img"/></a></button> -->
+      </div>
+   </nav>
+    <div class="main_body">
+      <div class="container-fluid">
+        <div class="bookingForm">
+          <div class="left my-3 p-3 bg-body rounded shadow-sm">
+            <label for="flightType" class="drop_down_label">
+              Country
+            </label>
+            <div class=" country-dropdown">
+              <select name="country-select" id="country-select">
+                <option class="dropdown-item" href="#">India</option>
+                  <option class="dropdown-item" href="#">Canada</option>
+                  <option class="dropdown-item" href="#">China</option>
+              </select>
+              </div>
+            <div class='upload-file'>
+                <div class="drag-area">
+                  <header><a id="upload_file" style="color: cornflowerblue;">Upload</a>/Drop your files here</header>
+                </div>
+                <div class="container buttons">
+                <!-- <button id="upload_file"><i class="fa fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i></button> -->
+                <!-- <button id="upload_file" class="btn"><i class="fa fa-duotone fa-file-arrow-up" aria-hidden="true"></i></button> -->
+                  <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple hidden/>
+                <!-- <button id="extract_btn" class="btn"><i class="fa fa-file-export"></i></button> -->
+                <button id="extract_btn" class="btn"><i class="fa fa-solid fa-share-from-square"></i></button>
+
+                <!-- <i class="fa-solid fa-share-from-square"></i> -->
+                <!-- <button id="extract_btn" class="btn">Extract</i></button> -->
+              </div>
+              </div>
+        </div>    
+        <!--SECTION TWO -->
+        <div class="right my-3 p-3 bg-body rounded shadow-sm">
+          <div class="container right-container ">
+            <div class="doc_container">
+              <div class=" doc_types">
+                <div class=" doc_types_col">
+                  <p>
+                  <label for="file_name_1">
+                    File name 1
+                  </label>
+                  <input type="text" name="file_name_1" id='file_name_1'  ><br></p>
+                <!-- <p>File name 1</p> -->
+                  <p>
+                    <label for="Document_Type_1">
+                      Document Type
+                    </label>
+                    <input type="text" name="Document_Type_1" id='Document_Type_1'  ><br>
+                  </p>
+                  <p>
+                    <label for="Document_Language_1">
+                      Document Language
+                    </label>
+                    <input type="text" name="Document_Language_1" id='Document_Language_1'  ><br>
+                  </p>
+                </div>
+                <div class=" doc_types_col">
+                <!-- <p>File name 2</p> -->
+                <p><label for="file_name_2">
+                  File name 2
+                </label>
+                <input type="text" name="file_name_2" id='file_name_2'  ><br></p>
+                  <p>
+                    <label for="Document_Type_2">
+                        Document Type
+                    </label>
+                    <input type="text" name="Document_Type_2" id='Document_Type_2'  ><br>
+                  </p>
+                  <p>
+                    <label for="Document_Language_2">
+                      Document Language
+                    </label>
+                    <input type="text" name="Document_Language_2" id='Document_Language_2'  ><br>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <br> -->
+            <br>
+            <div class="doc_container_down">
+            <div class="right_row">
+              <div class="right_col">
+                <p>
+                  <label for="Country">
+                    Country <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="Country" id ='Country_field'  ><br>
+                  </p>
+                </div>
+              <div class="right_col right_div">  
+                <p>
+                  <label for="local_brand_name">
+                    Local Brand name <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="local_brand_name"  id='local_brand_name'><br>
+                </p>
+              </div>
+            </div>
+            <div class="right_row">
+              <div class="right_col">
+                <p>
+                  <label for="Dosage">
+                    Dosage <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="Dosage" id ='Dosage'  ><br>
+                </p>
+                </div>
+              <div class="right_col right_div">
+                <p>
+                  <label for="Variation_Number">
+                    Variation Number
+                  </label>
+                  <input type="text" name="Variation_Number" id='Variation_Number'  ><br>
+                </p>
+              </div>
+            </div>
+            <div class="right_row">
+              <div class="right_col">
+                <p>
+                  <label for="Effective_date">
+                    Effective date <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="Effective_date" id="Effective_date"  ><br>
+                </p>
+                </div>
+              <div class="right_col right_div">
+                <p>
+                  <label for="CLP">
+                    Core Labelling Package <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="CLP" id="CLP"  ><br>
+                </p>
+              </div>
+            </div>
+            <div class="right_row">
+              <div class="right_col">
+                <p>
+                  <label for="New_NPI">
+                  Reasons for New NPI <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="New_NPI" id="New_NPI"  ><br>
+                </p>
+                </div>
+              <div class="right_col right_div">
+                <p>
+                  <label for="Tracking Number">
+                    Tracking Number
+                  </label>
+                  <input type="text" name="Tracking_Number" id='Tracking_Number'  ><br>
+                </p>
+              </div>
+            </div>
+            <div class="right_row">
+              <div class="right_col">
+                <p>
+                  <label for="HA_approved">
+                      NPI is HA approved <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="HA_approved" id='HA_approved'  ><br>
+                </p>
+                </div>
+              <div class="right_col right_div">
+                <p>
+                  <label for="New_or_existing">
+                      New/existing Package <span class='asterisk'>*</span>
+                  </label>
+                  <input type="text" name="New_or_existing" id='New_or_existing'  ><br>
+                </p>
+              </div>
+            </div>
+          </div></div>
+          <div class=" right_buttons">
+            <!-- <button id="review_btn" class="btn ">Review</button> -->
+              <button id="submit_btn" class="btn ">Submit</button>
+          </div>
+          <!-- <br> -->
+        </div>
+      </div>
+    </div>
+  </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+           <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <!-- <script src="./static/home.js"></script> -->
+    <script src= "{% static '/js/home.js' %}"></script>
+
+    </body>
+</html>
